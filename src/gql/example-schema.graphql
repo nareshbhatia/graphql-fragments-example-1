@@ -1,0 +1,12 @@
+type User {
+  id: ID!
+  fullName: String!
+  avatarUrl: String!
+  homeTown: String!
+  registeredAt: String!
+  friends: [User!]!
+}
+
+type Query {
+  UserProfile_Query: User!
+}
