@@ -3,9 +3,11 @@
 import { graphql } from '@/generated/gql';
 import { useQuery } from '@apollo/client';
 
-const UserProfileRoute_Query = graphql(/* GraphQL */ `
-  query UserProfile_Query {
-    UserProfile_Query {
+const userId = 'john.smith';
+
+const getUserQuery = graphql(/* GraphQL */ `
+  query User($id: ID!) {
+    user(id: $id) {
       id
       fullName
     }
@@ -13,13 +15,17 @@ const UserProfileRoute_Query = graphql(/* GraphQL */ `
 `);
 
 export default function UserProfile() {
-  const { data } = useQuery(UserProfileRoute_Query);
-  const userProfile = data?.UserProfile_Query;
-  if (!userProfile) return undefined;
+  const { data } = useQuery(getUserQuery, {
+    variables: {
+      id: userId,
+    },
+  });
+  const user = data?.user;
+  if (!user) return undefined;
 
   return (
     <div className="mx-auto max-w-3xl p-4">
-      {userProfile.id} {userProfile.fullName}
+      {user.id} {user.fullName}
     </div>
   );
 }

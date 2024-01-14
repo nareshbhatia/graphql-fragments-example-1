@@ -8,5 +8,5 @@ type User {
 }
 
 type Query {
-  UserProfile_Query: User!
+  user(id: ID!): User
 }
