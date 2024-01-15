@@ -6,6 +6,10 @@ const config: CodegenConfig = {
   generates: {
     './src/generated/gql/': {
       preset: 'client',
+      presetConfig: {
+        // see https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#the-usefragment-helper
+        fragmentMasking: { unmaskFunctionName: 'getFragmentData' },
+      },
     },
   },
   hooks: { afterAllFileWrite: ['prettier --write'] },

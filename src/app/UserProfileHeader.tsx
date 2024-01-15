@@ -1,4 +1,4 @@
-import { graphql, useFragment, FragmentType } from '@/generated/gql';
+import { graphql, getFragmentData, FragmentType } from '@/generated/gql';
 import { UserAvatar } from './UserAvatar';
 import {
   Card,
@@ -26,7 +26,7 @@ type UserProfileHeaderProps = {
 };
 
 export function UserProfileHeader(props: UserProfileHeaderProps) {
-  const user = useFragment(UserProfileHeaderFragment, props.user);
+  const user = getFragmentData(UserProfileHeaderFragment, props.user);
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">

@@ -1,4 +1,4 @@
-import { graphql, useFragment, FragmentType } from '@/generated/gql';
+import { graphql, getFragmentData, FragmentType } from '@/generated/gql';
 import { UserListItem } from './UserListItem';
 
 /*
@@ -20,7 +20,7 @@ type FriendListProps = {
 };
 
 export function FriendList(props: FriendListProps) {
-  const user = useFragment(FriendListFragment, props.user);
+  const user = getFragmentData(FriendListFragment, props.user);
   return (
     <div className="px-6">
       <h2 className="font-semibold">Friends</h2>

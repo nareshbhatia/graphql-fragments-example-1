@@ -1,5 +1,5 @@
 import { UserAvatar } from './UserAvatar';
-import { graphql, useFragment, FragmentType } from '@/generated/gql';
+import { graphql, getFragmentData, FragmentType } from '@/generated/gql';
 
 /*
  * "fragment UserListItem" generates:
@@ -18,7 +18,7 @@ type UserListItemProps = {
 };
 
 export function UserListItem(props: UserListItemProps) {
-  const userSummary = useFragment(UserListItemFragment, props.userSummary);
+  const userSummary = getFragmentData(UserListItemFragment, props.userSummary);
   return (
     <li className="flex items-center gap-3 py-4">
       <UserAvatar avatarUrl={userSummary.avatarUrl} /> {userSummary.fullName}
