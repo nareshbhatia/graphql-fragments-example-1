@@ -1,10 +1,12 @@
-# GraphQL Fragments Example
+# GraphQL Fragments Example 1
 
 A sample application to demonstrate the use of GraphQL fragments. The example is
 based on the article
 [Unleash the power of Fragments with GraphQL Codegen](https://the-guild.dev/blog/unleash-the-power-of-fragments-with-graphql-codegen).
-I have tried to use the naming conventions suggested in
+I have used the naming conventions suggested in
 [graphql-rules](https://github.com/graphql-rules/graphql-rules).
+
+![Screenshot](assets/screenshot.png)
 
 ## Getting Started
 

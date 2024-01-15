@@ -2,9 +2,15 @@ type User {
   id: ID!
   fullName: String!
   avatarUrl: String!
-  homeTown: String!
-  registeredAt: String!
-  friends: [User!]!
+  location: String!
+  friends: [UserSummary!]!
+}
+
+type UserSummary {
+  id: ID!
+  fullName: String!
+  avatarUrl: String!
+  location: String!
 }
 
 type Query {

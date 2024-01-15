@@ -36,18 +36,7 @@ export function ApolloProvider({
     }
 
     return new ApolloClient({
-      cache: new InMemoryCache({
-        typePolicies: {
-          FamAlert: {
-            fields: {
-              // enable merging of non-normalized objects https://www.apollographql.com/docs/react/caching/cache-field-behavior/#merging-non-normalized-objects
-              info: {
-                merge: true,
-              },
-            },
-          },
-        },
-      }),
+      cache: new InMemoryCache(),
       link: new HttpLink({
         uri: baseApiUrl,
         credentials: 'include',
