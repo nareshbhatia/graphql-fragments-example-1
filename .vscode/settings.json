@@ -8,10 +8,12 @@
     "dword",
     "imgur",
     "lucide",
+    "Moines",
     "Naresh",
     "nareshbhatia",
     "shadcn",
-    "tailwindcss"
+    "tailwindcss",
+    "wathan"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

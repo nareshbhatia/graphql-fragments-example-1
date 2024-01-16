@@ -23,6 +23,14 @@ const nareshBhatiaSummary: UserSummary = {
   location: 'Boston',
 };
 
+const adamWathanSummary: UserSummary = {
+  __typename: 'UserSummary',
+  id: 'adam.wathan',
+  fullName: 'Adam Wathan',
+  avatarUrl: 'https://github.com/adamwathan.png',
+  location: 'Ontario',
+};
+
 const danAbramovSummary: UserSummary = {
   __typename: 'UserSummary',
   id: 'dan.abramov',
@@ -39,6 +47,14 @@ const kentDoddsSummary: UserSummary = {
   location: 'Salt Lake City',
 };
 
+const leeRobinsonSummary: UserSummary = {
+  __typename: 'UserSummary',
+  id: 'lee.robinson',
+  fullName: 'Lee Robinson',
+  avatarUrl: 'https://github.com/leerob.png',
+  location: 'Des Moines',
+};
+
 const shadcnSummary: UserSummary = {
   __typename: 'UserSummary',
   id: 'shadcn',
@@ -49,8 +65,14 @@ const shadcnSummary: UserSummary = {
 
 const users: Record<string, User> = {
   'naresh.bhatia': toUser(nareshBhatiaSummary, [
+    adamWathanSummary,
     danAbramovSummary,
     kentDoddsSummary,
+    leeRobinsonSummary,
+    shadcnSummary,
+  ]),
+  'adam.wathan': toUser(adamWathanSummary, [
+    nareshBhatiaSummary,
     shadcnSummary,
   ]),
   'dan.abramov': toUser(danAbramovSummary, [
@@ -58,6 +80,10 @@ const users: Record<string, User> = {
     shadcnSummary,
   ]),
   'kent.dodds': toUser(kentDoddsSummary, [nareshBhatiaSummary, shadcnSummary]),
+  'lee.robinson': toUser(leeRobinsonSummary, [
+    nareshBhatiaSummary,
+    shadcnSummary,
+  ]),
   shadcn: toUser(shadcnSummary, [danAbramovSummary, nareshBhatiaSummary]),
 };
 
