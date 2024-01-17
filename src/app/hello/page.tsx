@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function AlertsPage() {
+export default function HelloPage() {
   return (
     <div className="flex flex-col mx-auto max-w-3xl p-6 gap-6">
       <p className="text-2xl font-semibold leading-none tracking-tight">
