@@ -4,6 +4,7 @@ import { graphql } from '@/generated/gql';
 import { useQuery } from '@apollo/client';
 import { UserProfileHeader } from './UserProfileHeader';
 import { FriendList } from './FriendList';
+import Link from 'next/link';
 
 const userId = 'naresh.bhatia';
 
@@ -36,6 +37,11 @@ export default function UserProfilePage() {
     <div className="flex flex-col mx-auto max-w-3xl p-4 gap-6">
       <UserProfileHeader user={user} />
       <FriendList user={user} />
+      <Link href="/hello">
+        <span className="px-6 text-sm font-semibold leading-6">
+          Say Hello &gt;
+        </span>
+      </Link>
     </div>
   );
 }
