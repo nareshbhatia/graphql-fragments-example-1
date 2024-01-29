@@ -25,8 +25,8 @@ type UserProfileHeaderProps = {
   user: FragmentType<typeof UserProfileHeaderFragment>;
 };
 
-export function UserProfileHeader(props: UserProfileHeaderProps) {
-  const user = getFragmentData(UserProfileHeaderFragment, props.user);
+export function UserProfileHeader({ user: userProp }: UserProfileHeaderProps) {
+  const user = getFragmentData(UserProfileHeaderFragment, userProp);
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">

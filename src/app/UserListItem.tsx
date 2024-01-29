@@ -17,8 +17,10 @@ type UserListItemProps = {
   userSummary: FragmentType<typeof UserListItemFragment>;
 };
 
-export function UserListItem(props: UserListItemProps) {
-  const userSummary = getFragmentData(UserListItemFragment, props.userSummary);
+export function UserListItem({
+  userSummary: userSummaryProp,
+}: UserListItemProps) {
+  const userSummary = getFragmentData(UserListItemFragment, userSummaryProp);
   return (
     <li className="flex items-center gap-3 py-4">
       <UserAvatar avatarUrl={userSummary.avatarUrl} /> {userSummary.fullName}

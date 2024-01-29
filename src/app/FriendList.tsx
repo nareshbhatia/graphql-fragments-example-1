@@ -19,8 +19,8 @@ type FriendListProps = {
   user: FragmentType<typeof FriendListFragment>;
 };
 
-export function FriendList(props: FriendListProps) {
-  const user = getFragmentData(FriendListFragment, props.user);
+export function FriendList({ user: userProp }: FriendListProps) {
+  const user = getFragmentData(FriendListFragment, userProp);
   return (
     <div className="px-6">
       <h2 className="font-semibold">Friends</h2>
